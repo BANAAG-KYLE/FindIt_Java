@@ -9,81 +9,64 @@
   [![Java Version](https://img.shields.io/badge/java-17%2B-blue.svg)](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
 </div>
 
-# Table of Contents
-I. [Project Overview](#project-overview)
+## Project Overview
 
-II. [Java Concepts](#java-concepts)
+FINDIT is a Lost and Found System designed to simplify the process of reporting, tracking, and recovering lost items. Built using Java programming techniques, the system provides a user-friendly platform that helps individuals and organizations efficiently manage lost belongings. By creating a streamlined, secure, and accessible solution, FINDIT transforms the traditional lost and found experience. The system enables easy item reporting, ownership verification, and item recovery, while supporting sustainability by reducing unnecessary item replacements and promoting community cooperation. More than just a technical tool, FINDIT represents an innovative approach to solving a common everyday challenge, making lost item management simple, transparent, and effective.
 
-III. [SDG Integration](#sdg-integration)
+## Object-Oriented Programming Concepts
 
-IV. [Installation and Usage](#installation-and-usage)
+The system demonstrates the core principles of Object-Oriented Programming through thoughtful design and implementation:
 
-# Project Overview
+### 1. Abstraction
 
-## About FINDIT
-FINDIT is a comprehensive Lost and Found Management System developed in Java, designed to revolutionize how institutions handle lost and found items. Built with modern Java programming techniques, FINDIT offers a secure, efficient, and user-friendly console-based platform for reporting, tracking, and claiming lost items.
+Abstraction is a fundamental OOP concept that focuses on hiding complex implementation details while exposing only the essential features of an object. In the FINDIT system, abstraction is prominently demonstrated through the `BaseItem` abstract class and various manager classes.
 
+The `BaseItem` abstract class is a prime example of abstraction. It defines a blueprint for items with common properties like `itemId`, `description`, `location`, and `foundDate`, while declaring an abstract method `getItemDetails()`. This abstract class provides a simplified, generalized view of an item, concealing the intricate details of how specific item types might be implemented.
 
-# Java Concepts
+For instance, the abstract method `getItemDetails()` requires subclasses to provide their own implementation. In the `Item` class, this method returns a formatted string with all relevant item information, effectively hiding the complex string formatting logic from the users of the class. This allows different types of items to have their own unique representations while maintaining a consistent interface.
 
-### 1. **Object-Oriented Programming**
-Object-Oriented Programming (OOP) is the cornerstone of FINDIT's design, enabling a modular, scalable, and reusable codebase:
+Another example of abstraction is seen in the `ItemManager` and `ClaimantManager` classes. These classes abstract away the complexities of data storage, retrieval, and management. Methods like `generateItemId()`, `findUnclaimedItemById()`, and `calculateSimilarity()` provide high-level operations without exposing the underlying data structures and algorithms.
 
-- **Inheritance**: 
-  - Abstract `BaseItem` class serves as a base for `Item` class
-  - Provides a common structure for all item-related operations
-  - Allows for future expansion of item types
+### 2. Inheritance
 
-- **Encapsulation**: 
-  - Private fields in `Item` and `Claimant` classes
-  - Controlled access through getter and setter methods
-  - Protects internal data from unauthorized modifications
+The system showcases inheritance through the `BaseItem` abstract class and `Item` class. The `BaseItem` class defines a foundational structure for items, providing common attributes like `itemId`, `description`, `location`, and `foundDate`. The `Item` class extends this base class, inheriting these core properties while adding specific functionality such as category and claim status.
 
-- **Interfaces**: 
-  - `ItemStatus` and `Categorizable` interfaces define contract-based programming
-  - Enables flexible implementation of item-related behaviors
-  - Supports future extensibility
+### 3. Encapsulation
 
-- **Polymorphism**: 
-  - Abstract `getItemDetails()` method in `BaseItem`
-  - Allows different implementations for various item types
-  - Demonstrates runtime polymorphic behavior
+Encapsulation is implemented through carefully controlled access to class attributes. In the `Item` and `Claimant` classes, private fields are protected from direct external modification. Access is provided through carefully designed getter and setter methods.
 
----
+### 4. Polymorphism
 
-## Libraries and Dependencies
-```
-java.time.LocalDate          # Date handling
-java.util.Random             # ID generation
-java.security.MessageDigest  # Secure hashing
-java.util.stream             # Data processing
-java.util.Scanner            # User input
-```
+Polymorphism is evident in the abstract `getItemDetails()` method of the `BaseItem` class. Each item type can provide its unique implementation of this method, showcasing how different classes can implement the same method signature with unique behaviors.
 
-# SDG Integration
+## Libraries and Technology Stack
 
-## SDG 11: Sustainable Cities and Communities
-The system promotes resource efficiency by:
-- Facilitating item recovery and reuse
-- Reducing waste through effective lost and found management
-- Encouraging community collaboration
-- Minimizing unnecessary product replacement
+The system leverages several Java libraries and features to enhance functionality:
+- `java.time.LocalDate` for precise date handling
+- `java.util.Random` for generating unique identifiers
+- `java.security.MessageDigest` for secure password hashing
+- `java.util.stream` for efficient data processing
+- `java.util.Scanner` for user interaction
 
-## SDG 16: Peace, Justice and Strong Institutions
-FINDIT supports institutional integrity through:
-- Transparent item tracking
-- Fair and accountable claim processes
-- Secure data management
-- Equal access to item recovery services
+## Sustainable Development Goals Integration
 
-# Installation and Usage
+### SDG 11: Sustainable Cities and Communities
+<div align="center"> <img src="https://github.com/BANAAG-KYLE/FindIt/blob/main/Images/SDG-11_banner.png" alt="SDG 11 Banner" width="800"/> </div>
 
-## Prerequisites
+FINDIT contributes to sustainable urban management by facilitating item recovery and reuse. The system reduces waste by providing an efficient mechanism for reuniting lost items with their owners, thereby minimizing unnecessary product replacements and promoting a circular economy approach.
+
+### SDG 16: Peace, Justice and Strong Institutions
+<div align="center"> <img src="https://github.com/BANAAG-KYLE/FindIt/blob/main/Images/SGD-16_banner.png" alt="SDG 16 Banner" width="800"/> </div>
+The application supports institutional integrity through its transparent and accountable item tracking and claim processes. By implementing secure data management and providing equal access to item recovery services, FINDIT embodies principles of fairness and institutional accountability.
+
+## Installation and Usage
+
+### Prerequisites
 - Java 17 or higher
-- Command-line interface/terminal
+- Command-line interface or terminal
 
-## Installation Steps
-1. Ensure Java is installed
+### Quick Start
+1. Ensure Java is installed on your system
 2. Clone the repository
 3. Compile the Java files
 4. Run the application
@@ -96,22 +79,53 @@ javac *.java
 java LostAndFoundSystem
 ```
 
-## User Guide
+### User Guide
 
-### Main Menu Options
-1. Report a lost item
-2. Verify item ownership
-3. Claim item
-4. View all items
-5. Admin settings
-6. Exit
+#### 1. Report a Lost Item
+When you've found a lost item, use this option to officially log it in the system:
+- Enter a detailed item description (minimum 3 words)
+- Specify the location where the item was found
+- Input the exact date of finding the item (YYYY-MM-DD format)
+- Select a category: Electronics, Clothing, Accessories, or Others
+- The system will generate a unique Item ID for tracking
+
+#### 2. Verify Item Ownership
+This feature helps you claim your lost item securely:
+- Search for your item using a descriptive search term
+- Browse through matching unclaimed items displayed in a table
+- Select the item by its ID
+- Provide your full name and contact information
+- Describe the item in detail to prove ownership
+- The system checks description similarity (60% match required)
+- If verified, you'll receive a unique claim code
+
+#### 3. Claim an Item
+Use this option when you have a claim code:
+- Enter the claim code generated during ownership verification
+- If the code is valid, the item will be marked as claimed
+- You'll receive confirmation of successful item claim
+
+#### 4. View All Items
+Quickly see all currently unclaimed items:
+- Displays a table of items with their ID, location, found date, and category
+- Helps you browse recently found items
+
+#### 5. Admin Settings
+Secure administrative access with features:
+- Requires admin password for entry
+- Search claimed items by ID
+- View all claimed items with details
+- Archive old claims (items unclaimed after 30 days)
+
+#### 6. Exit System
+Safely close the Lost and Found application
 
 ### Admin Access
 - Default admin password: `admin123`
+- Provides advanced management and tracking capabilities
 
 ---
 
-<div align="center">
-  <p>Developed with ❤️ for Object Oriented Programming</p>
-  <p>© 2024 FindIt Java Edition. All rights reserved.</p>
-</div>
+Developed with passion for Object-Oriented Programming and sustainable technological solutions.
+
+© 2024 FindIt Java Edition. All rights reserved.
