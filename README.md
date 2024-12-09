@@ -1,10 +1,12 @@
 <div align="center">
+  
+  <img src="https://github.com/BANAAG-KYLE/FindIt/blob/main/Images/lost_and_found_logo.png" alt="FINDIT Logo" width="400"/>
+  
   <h1>FINDIT: Lost and Found Management System</h1>
   
-  <p><em>Lost Today, Found Tomorrow</em></p>
+  <p><em>Lost Today, Found Tomorrow.</em></p>
 
   [![Java Version](https://img.shields.io/badge/java-17%2B-blue.svg)](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
-  [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 </div>
 
 # Table of Contents
@@ -21,14 +23,6 @@ IV. [Installation and Usage](#installation-and-usage)
 ## About FINDIT
 FINDIT is a comprehensive Lost and Found Management System developed in Java, designed to revolutionize how institutions handle lost and found items. Built with modern Java programming techniques, FINDIT offers a secure, efficient, and user-friendly console-based platform for reporting, tracking, and claiming lost items.
 
-## Core Features
-- 💻 Console-based user interface
-- 🔒 Secure authentication system
-- 🔍 Advanced item search capabilities
-- 📊 Administrative management functions
-- 🔄 Automated archiving
-- 💾 In-memory data management
-- 🔐 Robust security measures
 
 # Java Concepts
 
@@ -59,11 +53,11 @@ Object-Oriented Programming (OOP) is the cornerstone of FINDIT's design, enablin
 
 ## Libraries and Dependencies
 ```
-java.time.LocalDate     # Date handling
-java.util.Random        # ID generation
+java.time.LocalDate          # Date handling
+java.util.Random             # ID generation
 java.security.MessageDigest  # Secure hashing
-java.util.stream        # Data processing
-java.util.Scanner       # User input
+java.util.stream             # Data processing
+java.util.Scanner            # User input
 ```
 
 # SDG Integration
