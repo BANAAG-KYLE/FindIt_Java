@@ -81,7 +81,12 @@ java LostAndFoundSystem
 
 ### User Guide
 
-#### 1. Report a Lost Item
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_MENU.png" alt="FINDIT Logo" width="400"/>
+
+## 1. Report a Lost Item
+
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_REPORT.png" alt="FINDIT Logo" width="400"/>
+
 When you've found a lost item, use this option to officially log it in the system:
 - Enter a detailed item description (minimum 3 words)
 - Specify the location where the item was found
@@ -89,35 +94,61 @@ When you've found a lost item, use this option to officially log it in the syste
 - Select a category: Electronics, Clothing, Accessories, or Others
 - The system will generate a unique Item ID for tracking
 
-#### 2. Verify Item Ownership
+## 2. Verify Item Ownership
+
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_VERIFY_TABLE.png" alt="FINDIT Logo" width="400"/>
+
 This feature helps you claim your lost item securely:
 - Search for your item using a descriptive search term
 - Browse through matching unclaimed items displayed in a table
+  
+
 - Select the item by its ID
 - Provide your full name and contact information
 - Describe the item in detail to prove ownership
+  
+  <img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_FAILED.png" alt="FINDIT Logo" width="400"/>
+  
 - The system checks description similarity (60% match required)
+  
+  <img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_VERIFIED.png" alt="FINDIT Logo" width="400"/>
+  
 - If verified, you'll receive a unique claim code
 
-#### 3. Claim an Item
+## 3. Claim an Item
+
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_CLAIM.png" alt="FINDIT Logo" width="400"/>
+
 Use this option when you have a claim code:
 - Enter the claim code generated during ownership verification
 - If the code is valid, the item will be marked as claimed
 - You'll receive confirmation of successful item claim
 
-#### 4. View All Items
+## 4. View All Items
+
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_VIEW_ALL.png" alt="FINDIT Logo" width="400"/>
+
 Quickly see all currently unclaimed items:
 - Displays a table of items with their ID, location, found date, and category
 - Helps you browse recently found items
 
-#### 5. Admin Settings
+## 5. Admin Settings
+
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_ADMIN_MENU.png" alt="FINDIT Logo" width="400"/>
+
 Secure administrative access with features:
 - Requires admin password for entry
+  
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_ADMIN_SEARCH.png" alt="FINDIT Logo" width="400"/>
+
 - Search claimed items by ID
 - View all claimed items with details
+  
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_ADMIN_ARCHIVE.png" alt="FINDIT Logo" width="400"/>
+
 - Archive old claims (items unclaimed after 30 days)
 
-#### 6. Exit System
+## 6. Exit System
 Safely close the Lost and Found application
 
 ### Admin Access
