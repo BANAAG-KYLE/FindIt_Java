@@ -102,16 +102,14 @@ This feature helps you claim your lost item securely:
 - Search for your item using a descriptive search term
 - Browse through matching unclaimed items displayed in a table
   
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_FAILED.png" alt="FINDIT Logo" width="400"/>
 
 - Select the item by its ID
 - Provide your full name and contact information
 - Describe the item in detail to prove ownership
-  
-  <img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_FAILED.png" alt="FINDIT Logo" width="400"/>
-  
 - The system checks description similarity (60% match required)
   
-  <img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_VERIFIED.png" alt="FINDIT Logo" width="400"/>
+<img src="https://github.com/BANAAG-KYLE/FindIt_Java/blob/main/Images/OOP_VERIFIED.png" alt="FINDIT Logo" width="400"/>
   
 - If verified, you'll receive a unique claim code
 
