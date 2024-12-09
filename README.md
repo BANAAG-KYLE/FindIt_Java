@@ -17,36 +17,66 @@ FINDIT is a Lost and Found System designed to simplify the process of reporting,
 
 The system demonstrates the core principles of Object-Oriented Programming through thoughtful design and implementation:
 
-### 1. Abstraction
+#### 1. Abstraction
+"Abstraction in our system is primarily implemented through the BaseItem abstract class and various manager classes:
 
-Abstraction is a fundamental OOP concept that focuses on hiding complex implementation details while exposing only the essential features of an object. In the FINDIT system, abstraction is prominently demonstrated through the `BaseItem` abstract class and various manager classes.
+```java
+abstract class BaseItem {
+    protected String itemId;
+    protected String description;
+    protected String location;
+    protected LocalDate foundDate;
+    
+    public abstract String getItemDetails();
+}
+```
 
-The `BaseItem` abstract class is a prime example of abstraction. It defines a blueprint for items with common properties like `itemId`, `description`, `location`, and `foundDate`, while declaring an abstract method `getItemDetails()`. This abstract class provides a simplified, generalized view of an item, concealing the intricate details of how specific item types might be implemented.
+#### 2. Inheritance
+"We've implemented inheritance to promote code reuse and establish clear hierarchies:
 
-For instance, the abstract method `getItemDetails()` requires subclasses to provide their own implementation. In the `Item` class, this method returns a formatted string with all relevant item information, effectively hiding the complex string formatting logic from the users of the class. This allows different types of items to have their own unique representations while maintaining a consistent interface.
+```java
+class Item extends BaseItem implements ItemStatus, Categorizable {
+    private String category;
+    private boolean claimed;
+    private String status;
+    // Additional implementation
+}
+```
 
-Another example of abstraction is seen in the `ItemManager` and `ClaimantManager` classes. These classes abstract away the complexities of data storage, retrieval, and management. Methods like `generateItemId()`, `findUnclaimedItemById()`, and `calculateSimilarity()` provide high-level operations without exposing the underlying data structures and algorithms.
+#### 3. Encapsulation
+"Encapsulation is crucial for data security and maintenance. We've implemented it through:
 
-### 2. Inheritance
+```java
+// Private fields
+private String category;
+private boolean claimed;
+private String status;
 
-The system showcases inheritance through the `BaseItem` abstract class and `Item` class. The `BaseItem` class defines a foundational structure for items, providing common attributes like `itemId`, `description`, `location`, and `foundDate`. The `Item` class extends this base class, inheriting these core properties while adding specific functionality such as category and claim status.
+// Public interface methods
+public String getCategory() { return category; }
+public void setCategory(String category) { this.category = category; }
+public boolean isClaimed() { return claimed; }
+```
 
-### 3. Encapsulation
 
-Encapsulation is implemented through carefully controlled access to class attributes. In the `Item` and `Claimant` classes, private fields are protected from direct external modification. Access is provided through carefully designed getter and setter methods.
 
-### 4. Polymorphism
+#### 4. Polymorphism
+"We've implemented both interface and implementation polymorphism:
 
-Polymorphism is evident in the abstract `getItemDetails()` method of the `BaseItem` class. Each item type can provide its unique implementation of this method, showcasing how different classes can implement the same method signature with unique behaviors.
+```java
+// Interface definitions
+interface ItemStatus {
+    boolean isClaimed();
+    void setClaimed(boolean claimed);
+    String getStatus();
+}
 
-## Libraries and Technology Stack
+interface Categorizable {
+    String getCategory();
+    void setCategory(String category);
+}
+```
 
-The system leverages several Java libraries and features to enhance functionality:
-- `java.time.LocalDate` for precise date handling
-- `java.util.Random` for generating unique identifiers
-- `java.security.MessageDigest` for secure password hashing
-- `java.util.stream` for efficient data processing
-- `java.util.Scanner` for user interaction
 
 ## Sustainable Development Goals Integration
 
